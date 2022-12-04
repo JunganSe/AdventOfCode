@@ -4,6 +4,6 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        Day2.Run();
+        Day2v2.Run();
     }
 }

@@ -2,7 +2,7 @@
 
 internal class Day5
 {
-    public static void Run()
+    public void Run()
     {
         var input = Helper.ReadTextFile("5.txt");
         int splitAt = input.FindIndex(line => string.IsNullOrEmpty(line));
@@ -21,7 +21,7 @@ internal class Day5
         Console.WriteLine(GetTopOfStacks(stacks2));
     }
 
-    private static List<Stack<char>> ParseDrawing(List<string> rawDrawing)
+    private List<Stack<char>> ParseDrawing(List<string> rawDrawing)
     {
         string reference = rawDrawing[0];
 
@@ -42,7 +42,7 @@ internal class Day5
         return stacks;
     }
 
-    private static List<Instruction> ParseInstructions(List<string> rawInstructions)
+    private List<Instruction> ParseInstructions(List<string> rawInstructions)
     {
         var instructions = new List<Instruction>();
         foreach (string line in rawInstructions)
@@ -55,7 +55,7 @@ internal class Day5
         return instructions;
     }
 
-    private static void ExecuteInstructions1(List<Stack<char>> stacks, List<Instruction> instructions)
+    private void ExecuteInstructions1(List<Stack<char>> stacks, List<Instruction> instructions)
     {
         foreach (var instruction in instructions)
         {
@@ -67,7 +67,7 @@ internal class Day5
         }
     }
 
-    private static void ExecuteInstructions2(List<Stack<char>> stacks, List<Instruction> instructions)
+    private void ExecuteInstructions2(List<Stack<char>> stacks, List<Instruction> instructions)
     {
         foreach (var instruction in instructions)
         {
@@ -79,7 +79,7 @@ internal class Day5
         }
     }
 
-    private static string GetTopOfStacks(List<Stack<char>> stacks)
+    private string GetTopOfStacks(List<Stack<char>> stacks)
     {
         string output = "";
         foreach (var stack in stacks)

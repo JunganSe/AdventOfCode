@@ -4,7 +4,7 @@ namespace AdventOfCode2022;
 
 public class Day6
 {
-    public static void Run()
+    public void Run()
     {
         var input = Helper.ReadTextFile("6.txt");
         string message = input[0];
@@ -19,7 +19,7 @@ public class Day6
         Console.WriteLine("\nLetters before message starts: " + startOfMessage);
     }
 
-    private static int IndexOfUniquePart(string message, int partSize)
+    private int IndexOfUniquePart(string message, int partSize)
     {
         for (int i = 0; i < message.Length-partSize; i++)
         {
@@ -29,7 +29,7 @@ public class Day6
         return -1;
     }
 
-    public static bool HasOnlyUniqueCharacters(string word)
+    public bool HasOnlyUniqueCharacters(string word)
     {
         for (int i = 0; i < word.Length; i++)
         {
@@ -39,7 +39,7 @@ public class Day6
         return true;
     }
 
-    public static bool HasOnlyUniqueCharactersRegex(string word)
+    public bool HasOnlyUniqueCharactersRegex(string word)
     {
         return Regex.IsMatch(word, @"^(?:(.)(?!.*\1))*$");
     }

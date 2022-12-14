@@ -2,7 +2,7 @@
 
 internal class Day3
 {
-    public static void Run()
+    public void Run()
     {
         var input = Helper.ReadTextFile("3.txt");
 
@@ -25,13 +25,13 @@ internal class Day3
         Console.WriteLine($"Total B: {totalValueB}");
     }
 
-    private static string[] SplitLine(string line)
+    private string[] SplitLine(string line)
     {
         int split = line.Length / 2;
         return new string[] { line[..split], line[split..] };
     }
 
-    private static char GetCommonA(string[] input)
+    private char GetCommonA(string[] input)
     {
         foreach (char c in input[0])
         {
@@ -41,7 +41,7 @@ internal class Day3
         throw new ArgumentException();
     }
 
-    private static int GetValue(char c)
+    private int GetValue(char c)
     {
         if (char.IsLower(c))
             return (int)c - 96;
@@ -50,7 +50,7 @@ internal class Day3
         throw new ArgumentException();
     }
 
-    private static List<string[]> GetGroupsOf3(List<string> input)
+    private List<string[]> GetGroupsOf3(List<string> input)
     {
         var groups = new List<string[]>();
         for (int i = 0; i < input.Count; i += 3)
@@ -58,7 +58,7 @@ internal class Day3
         return groups;
     }
 
-    private static char GetCommonB(string[] input)
+    private char GetCommonB(string[] input)
     {
         foreach (char c in input[0])
         {

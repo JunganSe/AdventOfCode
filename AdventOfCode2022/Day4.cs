@@ -2,7 +2,7 @@
 
 internal class Day4
 {
-    public static void Run()
+    public void Run()
     {
         var input = Helper.ReadTextFile("4.txt");
         var assignments = ParseInput(input);
@@ -12,7 +12,7 @@ internal class Day4
         Console.WriteLine(GetOverlappingCountV2(assignments));
     }
 
-    private static List<Assignment> ParseInput(List<string> input)
+    private List<Assignment> ParseInput(List<string> input)
     {
         // Ordning: StartA, EndA, StartB, EndB
         var output = new List<Assignment>();
@@ -25,7 +25,7 @@ internal class Day4
         return output;
     }
 
-    private static int GetContainingCount(List<Assignment> assignments)
+    private int GetContainingCount(List<Assignment> assignments)
     {
         int containsCount = 0;
         foreach (var a in assignments)
@@ -37,7 +37,7 @@ internal class Day4
         return containsCount;
     }
 
-    private static int GetOverlappingCount(List<Assignment> assignments)
+    private int GetOverlappingCount(List<Assignment> assignments)
     {
         int overlappingCount = 0;
         foreach (var a in assignments)
@@ -51,7 +51,7 @@ internal class Day4
         return overlappingCount;
     }
 
-    private static int GetOverlappingCountV2(List<Assignment> assignments)
+    private int GetOverlappingCountV2(List<Assignment> assignments)
     {
         int overlappingCount = 0;
         foreach (var a in assignments)

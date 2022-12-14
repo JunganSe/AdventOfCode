@@ -2,7 +2,7 @@
 
 internal class Day1
 {
-    public static void Run()
+    public void Run()
     {
         var input = Helper.ReadTextFile("1.txt");
         var bags = new List<List<int>>();

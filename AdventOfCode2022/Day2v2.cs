@@ -2,7 +2,7 @@
 
 internal class Day2v2
 {
-    public static void Run()
+    public void Run()
     {
         // Metoden hämtad från nätet, egen kod.
 

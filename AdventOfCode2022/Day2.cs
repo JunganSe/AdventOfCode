@@ -2,7 +2,7 @@
 
 internal class Day2
 {
-    public static void Run()
+    public void Run()
     {
         var input = Helper.ReadTextFile("2.txt");
 
@@ -17,7 +17,7 @@ internal class Day2
         Console.WriteLine($"Points A: {pointsA}\nPoints B: {pointsB}");
     }
 
-    private static int GetShapePoints(char shape)
+    private int GetShapePoints(char shape)
     {
         if (IsRock(shape))
             return 1;
@@ -29,7 +29,7 @@ internal class Day2
         throw new ArgumentException();
     }
 
-    private static int GetRoundPoints(char theirShape, char myShape)
+    private int GetRoundPoints(char theirShape, char myShape)
     {
         if ((IsRock(theirShape) && IsPaper(myShape))
             || (IsPaper(theirShape) && IsScissors(myShape))
@@ -47,17 +47,17 @@ internal class Day2
         throw new ArgumentException();
     }
 
-    private static bool IsRock(char shape) => "AX".Contains(shape);
-    private static bool IsPaper(char shape) => "BY".Contains(shape);
-    private static bool IsScissors(char shape) => "CZ".Contains(shape);
+    private bool IsRock(char shape) => "AX".Contains(shape);
+    private bool IsPaper(char shape) => "BY".Contains(shape);
+    private bool IsScissors(char shape) => "CZ".Contains(shape);
 
-    private static int GetPointsB(char theirShape, char strategy)
+    private int GetPointsB(char theirShape, char strategy)
     {
         char myShape = GetMyShape(theirShape, strategy);
         return GetShapePoints(myShape) + GetRoundPoints(theirShape, myShape);
     }
 
-    private static char GetMyShape(char theirShape, char strategy)
+    private char GetMyShape(char theirShape, char strategy)
     {
         if ((IsRock(theirShape) && WantToDraw(strategy))
             || (IsPaper(theirShape) && WantToLose(strategy))
@@ -75,7 +75,7 @@ internal class Day2
         throw new ArgumentException();
     }
 
-    private static bool WantToLose(char strategy) => strategy == 'X';
-    private static bool WantToDraw(char strategy) => strategy == 'Y';
-    private static bool WantToWin(char strategy) => strategy == 'Z';
+    private bool WantToLose(char strategy) => strategy == 'X';
+    private bool WantToDraw(char strategy) => strategy == 'Y';
+    private bool WantToWin(char strategy) => strategy == 'Z';
 }

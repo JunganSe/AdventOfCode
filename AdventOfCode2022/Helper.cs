@@ -4,6 +4,6 @@ internal static class Helper
 {
     public static List<string> ReadTextFile(string fileName)
     {
-        return File.ReadAllLines($"../../../Inputs/{fileName}").ToList();
+        return System.IO.File.ReadAllLines($"../../../Inputs/{fileName}").ToList();
     }
 }

@@ -17,13 +17,13 @@ internal class Day2
 
     public void Run()
     {
-        Part1();
-        Part2();
+        var input = Helper.ReadTextFile("2");
+        Part1(input);
+        Part2(input);
     }
 
-    public void Part1()
+    public void Part1(string[] input)
     {
-        var input = Helper.ReadTextFile("2");
         var games = ParseGames(input);
 
         var possibleGames = new List<Game>();
@@ -37,14 +37,15 @@ internal class Day2
         Console.WriteLine("1 - Sum of ids: " + idSum);
     }
 
-    public void Part2()
+    public void Part2(string[] input)
     {
-        var input = Helper.ReadTextFile("2");
         var games = ParseGames(input);
 
         int powerSum = games.Select(game => GetMinimumRed(game) * GetMinimumGreen(game) * GetMinimumBlue(game)).Sum();
         Console.WriteLine("2 - Sum of cube power: " + powerSum);
     }
+
+
 
     private IEnumerable<Game> ParseGames(string[] input)
         => input.Select(line => ParseGame(line));

@@ -39,6 +39,8 @@ internal class Day1
         Console.WriteLine($"Sum: {sum}");
     }
 
+
+
     private (int? index, int? value) GetFirstDigit(string line)
     {
         int index = line.IndexOf(line.FirstOrDefault(char.IsDigit));

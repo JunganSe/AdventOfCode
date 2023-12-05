@@ -4,6 +4,6 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        new Day2().Run();
+        new Day3().Run();
     }
 }

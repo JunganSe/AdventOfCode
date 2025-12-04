@@ -1,4 +1,6 @@
-﻿namespace AdventOfCode2023;
+﻿using Helpers;
+
+namespace AdventOfCode2023;
 
 internal class Day4
 {
@@ -11,7 +13,7 @@ internal class Day4
 
     public void Run()
     {
-        var input = Helper.ReadTextFile("4");
+        var input = FileReader.ReadTextFile("4");
         Part1(input);
         Part2(input);
     }

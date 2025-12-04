@@ -1,6 +1,6 @@
-﻿namespace AdventOfCode2024;
+﻿namespace Helpers;
 
-internal static class Helper
+public static class FileReader
 {
     public static string[] ReadTextFile(string fileName)
     {
